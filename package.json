@@ -1,0 +1,22 @@
+{
+  "name": "restful-booker-api-tests",
+  "version": "1.0.0",
+  "description": "API test automation for the Restful-Booker playground API (Playwright + TypeScript)",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:ping": "playwright test tests/ping.spec.ts",
+    "test:auth": "playwright test tests/auth.spec.ts",
+    "test:get": "playwright test tests/get-booking.spec.ts tests/get-booking-ids.spec.ts",
+    "test:create": "playwright test tests/create-booking.spec.ts",
+    "test:update": "playwright test tests/update-booking.spec.ts tests/partial-update-booking.spec.ts",
+    "test:delete": "playwright test tests/delete-booking.spec.ts",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
