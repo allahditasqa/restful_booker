@@ -1,0 +1,2 @@
+﻿"Test Case ID","Module","Sub-module","Group","Title","Priority","Test Type","Preconditions","Test Steps","Test Data","Expected Result","Automation Status","Spec File","Requirement","Regression","Last Updated"
+"TC_PING_01","Health Check","Ping","Health check","GET /ping answers 201 Created","High","API / Functional","None","1. Send GET /ping.","GET /ping","Status 201 and the body ""Created"".","Automated","tests/ping.spec.ts","API doc: HealthCheck (GET /ping)","Yes","18-11-2026"

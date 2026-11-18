@@ -26,6 +26,42 @@ What is checked:
 - **Formats:** JSON and XML (`Accept` and `Content-Type`).
 - **Negative cases:** missing fields (500), unknown id (404 on read, 405 on write), wrong credentials (`Bad credentials`).
 
+## Test cases
+
+All 54 cases are documented in one standard format ([docs/TEST_CASE_STANDARD.md](docs/TEST_CASE_STANDARD.md), [docs/TEST_STRATEGY.md](docs/TEST_STRATEGY.md)).
+
+| Item | Where |
+|---|---|
+| Test case documents (8, one per endpoint) | [`docs/test-cases/*.md`](docs/test-cases) |
+| Master CSV (same columns for every module) | `docs/test-cases/*.csv` |
+| Cases | **54**: 20 High, 25 Medium, 9 Low; all automated |
+
+Each case has an ID (`TC_<ENDPOINT>_<NN>`, the same ID is in the test title in code), module, title, priority, type, preconditions, test data,
+numbered steps, expected result, automation status, spec file and the item of the API documentation it traces to.
+`npm run cases:check` proves documents and code agree 1:1 (IDs, titles, spec files, master CSV); it runs in CI.
+
+## Reports
+
+Every run writes module-wise, self-contained reports. They are **committed**; every run adds new files, an old report is never overwritten:
+
+```
+reports/
+├── index.html                                              history of all runs, newest on top, links to every module report
+├── history.json
+└── create-booking/
+    ├── Create Booking test 18-11-2026_14-32-29.html        HTML report of the module
+    └── Create Booking test cases 18-11-2026_14-32-29.csv   the cases of the module: steps, expected result and the real result of this run
+    (the same for health-check/, auth/, get-booking-ids/, get-booking/, update-booking/, partial-update-booking/, delete-booking/)
+```
+
+| Goal | Command |
+|---|---|
+| Generate the reports | `npm test` (reporter: [`reporters/offline-report.ts`](reporters/offline-report.ts)); use `npx playwright test --retries=0` for a run without retries |
+| Open the history | `npm run reports` |
+
+**Latest committed run: 18-11-2026 14:32:29, no retries: 54 of 54 as expected (50 passed, 4 known defects, 0 failed).** Open [reports/index.html](reports/index.html).
+Known defects show as "known defect" in the report; if the API is fixed the case is reported as failed.
+
 ## Known defects
 
 Four cases are written as the documentation says but the live API behaves differently. They are marked with `test.fail()`: they pass while the defect exists and turn red the day the API is fixed. Details are in [DEFECTS.md](DEFECTS.md).
@@ -43,6 +79,9 @@ tests/*.spec.ts        WHAT is checked (steps and assertions only)
 tests/fixtures.ts      gives every test a ready `api` client
 src/api/booking-api.ts HOW to call the API (URLs, headers, auth modes)
 src/data/booking-data.ts  test data builders, admin credentials
+docs/test-cases/       test case documents + master CSV
+reporters/ · scripts/  module-wise report writer, traceability check
+reports/               committed module-wise reports
 ```
 
 - Tests never build URLs or headers themselves. One client class owns them.
@@ -65,7 +104,9 @@ npm test
 |---|---|
 | Run everything | `npm test` |
 | One endpoint | `npm run test:auth` · `test:get` · `test:create` · `test:update` · `test:delete` · `test:ping` |
-| Open the HTML report | `npm run report` |
+| Open the Playwright HTML report | `npm run report` |
+| Open the module-wise reports history | `npm run reports` |
+| Check documents = code (traceability) | `npm run cases:check` |
 | Type check | `npm run typecheck` |
 | Another host | `BASE_URL=https://your-host npm test` |
 

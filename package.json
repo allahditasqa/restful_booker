@@ -12,7 +12,11 @@
     "test:update": "playwright test tests/update-booking.spec.ts tests/partial-update-booking.spec.ts",
     "test:delete": "playwright test tests/delete-booking.spec.ts",
     "report": "playwright show-report",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "cases:csv": "node scripts/export-test-cases.js",
+    "cases:check": "node scripts/export-test-cases.js --check",
+    "reports": "node scripts/open-reports.js",
+    "check": "npm run typecheck && npm run cases:check"
   },
   "devDependencies": {
     "@playwright/test": "^1.49.0",

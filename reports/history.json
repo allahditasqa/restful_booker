@@ -1,0 +1,170 @@
+[
+  {
+    "RunId": "20261118-143229",
+    "StartedAt": "2026-11-18T09:32:29.918Z",
+    "Tool": "Restful-Booker API",
+    "Browser": "None (API tests, Playwright request client)",
+    "Environment": "https://restful-booker.herokuapp.com",
+    "DurationSeconds": 39,
+    "Modules": [
+      {
+        "Module": "Auth",
+        "ReportPath": "auth/Auth test 18-11-2026_14-32-29.html",
+        "CsvPath": "auth/Auth test cases 18-11-2026_14-32-29.csv",
+        "Total": 5,
+        "Passed": 5,
+        "Failed": 0,
+        "Skipped": 0,
+        "KnownDefects": 0,
+        "Results": {
+          "TC_AUTH_01": "passed",
+          "TC_AUTH_02": "passed",
+          "TC_AUTH_03": "passed",
+          "TC_AUTH_04": "passed",
+          "TC_AUTH_05": "passed"
+        },
+        "DurationSeconds": 6.3
+      },
+      {
+        "Module": "Create Booking",
+        "ReportPath": "create-booking/Create Booking test 18-11-2026_14-32-29.html",
+        "CsvPath": "create-booking/Create Booking test cases 18-11-2026_14-32-29.csv",
+        "Total": 8,
+        "Passed": 8,
+        "Failed": 0,
+        "Skipped": 0,
+        "KnownDefects": 0,
+        "Results": {
+          "TC_CREATE_01": "passed",
+          "TC_CREATE_02": "passed",
+          "TC_CREATE_03": "passed",
+          "TC_CREATE_04": "passed",
+          "TC_CREATE_05": "passed",
+          "TC_CREATE_06": "passed",
+          "TC_CREATE_07": "passed",
+          "TC_CREATE_08": "passed"
+        },
+        "DurationSeconds": 14.5
+      },
+      {
+        "Module": "Delete Booking",
+        "ReportPath": "delete-booking/Delete Booking test 18-11-2026_14-32-29.html",
+        "CsvPath": "delete-booking/Delete Booking test cases 18-11-2026_14-32-29.csv",
+        "Total": 8,
+        "Passed": 8,
+        "Failed": 0,
+        "Skipped": 0,
+        "KnownDefects": 0,
+        "Results": {
+          "TC_DELETE_01": "passed",
+          "TC_DELETE_02": "passed",
+          "TC_DELETE_03": "passed",
+          "TC_DELETE_04": "passed",
+          "TC_DELETE_05": "passed",
+          "TC_DELETE_06": "passed",
+          "TC_DELETE_07": "passed",
+          "TC_DELETE_08": "passed"
+        },
+        "DurationSeconds": 16.2
+      },
+      {
+        "Module": "Get Booking",
+        "ReportPath": "get-booking/Get Booking test 18-11-2026_14-32-29.html",
+        "CsvPath": "get-booking/Get Booking test cases 18-11-2026_14-32-29.csv",
+        "Total": 6,
+        "Passed": 5,
+        "Failed": 0,
+        "Skipped": 0,
+        "KnownDefects": 1,
+        "Results": {
+          "TC_GET_01": "passed",
+          "TC_GET_02": "passed",
+          "TC_GET_03": "passed",
+          "TC_GET_04": "passed",
+          "TC_GET_05": "passed",
+          "TC_GET_06": "known"
+        },
+        "DurationSeconds": 8.3
+      },
+      {
+        "Module": "Get Booking IDs",
+        "ReportPath": "get-booking-ids/Get Booking IDs test 18-11-2026_14-32-29.html",
+        "CsvPath": "get-booking-ids/Get Booking IDs test cases 18-11-2026_14-32-29.csv",
+        "Total": 11,
+        "Passed": 8,
+        "Failed": 0,
+        "Skipped": 0,
+        "KnownDefects": 3,
+        "Results": {
+          "TC_IDS_01": "passed",
+          "TC_IDS_02": "passed",
+          "TC_IDS_03": "passed",
+          "TC_IDS_04": "passed",
+          "TC_IDS_05": "passed",
+          "TC_IDS_06": "known",
+          "TC_IDS_07": "passed",
+          "TC_IDS_08": "known",
+          "TC_IDS_09": "known",
+          "TC_IDS_10": "passed",
+          "TC_IDS_11": "passed"
+        },
+        "DurationSeconds": 20.2
+      },
+      {
+        "Module": "Health Check",
+        "ReportPath": "health-check/Health Check test 18-11-2026_14-32-29.html",
+        "CsvPath": "health-check/Health Check test cases 18-11-2026_14-32-29.csv",
+        "Total": 1,
+        "Passed": 1,
+        "Failed": 0,
+        "Skipped": 0,
+        "KnownDefects": 0,
+        "Results": {
+          "TC_PING_01": "passed"
+        },
+        "DurationSeconds": 1.1
+      },
+      {
+        "Module": "Partial Update Booking",
+        "ReportPath": "partial-update-booking/Partial Update Booking test 18-11-2026_14-32-29.html",
+        "CsvPath": "partial-update-booking/Partial Update Booking test cases 18-11-2026_14-32-29.csv",
+        "Total": 8,
+        "Passed": 8,
+        "Failed": 0,
+        "Skipped": 0,
+        "KnownDefects": 0,
+        "Results": {
+          "TC_PATCH_01": "passed",
+          "TC_PATCH_02": "passed",
+          "TC_PATCH_03": "passed",
+          "TC_PATCH_04": "passed",
+          "TC_PATCH_05": "passed",
+          "TC_PATCH_06": "passed",
+          "TC_PATCH_07": "passed",
+          "TC_PATCH_08": "passed"
+        },
+        "DurationSeconds": 17.7
+      },
+      {
+        "Module": "Update Booking",
+        "ReportPath": "update-booking/Update Booking test 18-11-2026_14-32-29.html",
+        "CsvPath": "update-booking/Update Booking test cases 18-11-2026_14-32-29.csv",
+        "Total": 7,
+        "Passed": 7,
+        "Failed": 0,
+        "Skipped": 0,
+        "KnownDefects": 0,
+        "Results": {
+          "TC_UPDATE_01": "passed",
+          "TC_UPDATE_02": "passed",
+          "TC_UPDATE_03": "passed",
+          "TC_UPDATE_04": "passed",
+          "TC_UPDATE_05": "passed",
+          "TC_UPDATE_06": "passed",
+          "TC_UPDATE_07": "passed"
+        },
+        "DurationSeconds": 14.6
+      }
+    ]
+  }
+]
